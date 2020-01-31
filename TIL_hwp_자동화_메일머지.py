@@ -4,14 +4,14 @@ import win32com.client as win32  # 윈도우에서만 설치가능
 import pandas as pd
 import shutil # 파일 복사용 모듈
 from datetime import datetime as dt # 작업시간을 측정하기 위함.
-# import win32gui #한/글 창을 백그라운드로 숨기기 위한 모듈
+import win32gui #한/글 창을 백그라운드로 숨기기 위한 모듈
 
 PATH_EXCEL = 'c:/Users/User/Desktop/python_hwp/화성오산.xls'
 PATH_HWP = 'c:/Users/User/Desktop/python_hwp/award.hwp'
 PATH_HWP_RESULT = 'c:/Users/User/Desktop/python_hwp/award_result.hwp'
 
 hwp = win32.gencache.EnsureDispatch("HWPFrame.HwpObject")
-hwnd = win32gui.FindWindows(None, '빈 문서 1 - 한글') # 한/글 창의 윈도우 핸들값을 알아내서 
+hwnd = win32gui.FindWindow(None, '빈 문서 1 - 한글') # 한/글 창의 윈도우 핸들값을 알아내서 
 win32gui.ShowWindow(hwnd, 0) # 한/글 창을 백그라운드로 숨김.
 
 # hwp.RegisterModule("FilePathCheckDll", "FilePathCheckerModule") # 보안모듈 적용(파일 열고닫을 때 팝업이 안나타남)
