@@ -11,8 +11,8 @@ PATH_HWP = 'c:/Users/User/Desktop/python_hwp/award.hwp'
 PATH_HWP_RESULT = 'c:/Users/User/Desktop/python_hwp/award_result.hwp'
 
 hwp = win32.gencache.EnsureDispatch("HWPFrame.HwpObject")
-# hwnd = win32gui.FindWindows(None, '빈 문서 1 - 한글') # 한/글 창의 윈도우 핸들값을 알아내서 
-# win32gui.ShowWindow(hwnd, 0) # 한/글 창을 백그라운드로 숨김
+hwnd = win32gui.FindWindows(None, '빈 문서 1 - 한글') # 한/글 창의 윈도우 핸들값을 알아내서 
+win32gui.ShowWindow(hwnd, 0) # 한/글 창을 백그라운드로 숨김.
 
 # hwp.RegisterModule("FilePathCheckDll", "FilePathCheckerModule") # 보안모듈 적용(파일 열고닫을 때 팝업이 안나타남)
 
